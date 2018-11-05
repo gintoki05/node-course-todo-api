@@ -10,7 +10,7 @@ MongoClient.connect(
     console.log('Connected to MongoDB server');
     const db = client.db('TodoApp');
 
-    // db.collection('Todos').insertOne(
+    // db.collection('todos').insertOne(
     //   {
     //     text: 'Something to do',
     //     completed: false
@@ -24,7 +24,7 @@ MongoClient.connect(
     //   }
     // );
 
-    // db.collection('Users').insertOne(
+    // db.collection('users').insertOne(
     //   {
     //     name: 'Muhammad',
     //     age: 21,

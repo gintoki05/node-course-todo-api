@@ -3,6 +3,7 @@ const { MongoClient, ObjectID } = require('mongodb');
 
 MongoClient.connect(
   'mongodb://localhost:27017/TodoApp',
+  { useNewUrlParser: true },
   (err, client) => {
     if (err) {
       return console.log('Unable to connect to MongoDB server');
@@ -10,8 +11,8 @@ MongoClient.connect(
     console.log('Connected to MongoDB server');
     const db = client.db('TodoApp');
 
-    // db.collection('Todos')
-    //   .find({ _id: new ObjectID('5ba0c32d807387216d177581') })
+    // db.collection('todos')
+    //   .find({ _id: new ObjectID('5ba44037769382256758ab8a') })
     //   .toArray()
     //   .then(
     //     docs => {
@@ -23,7 +24,7 @@ MongoClient.connect(
     //     }
     //   );
 
-    // db.collection('Todos')
+    // db.collection('todos')
     //   .find()
     //   .count()
     //   .then(
@@ -35,8 +36,8 @@ MongoClient.connect(
     //     }
     //   );
 
-    db.collection('Users')
-      .find({ name: 'Ajie' })
+    db.collection('users')
+      .find({ email: 'ajieprastyo@gmail.com' })
       .toArray()
       .then(docs => {
         console.log(JSON.stringify(docs, undefined, 2));
